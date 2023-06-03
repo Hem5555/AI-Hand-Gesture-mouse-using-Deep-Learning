@@ -1,6 +1,3 @@
-# AI-Hand-Gesture-mouse-using-Deep-Learning
-AI Hand Gesture mouse using Deep Learning
-
 
 # Hand Gesture AI Virtual Mouse Using Deep Learning Method
 ## Overview
@@ -49,13 +46,13 @@ These are the following steps we follow to collect and label data.
 
 * Then. we change the number of training data classes, change the value of "NUM_CLASSES = 7" and modify the label of "model/keypoint_classifier/keypoint_classifier_label.csv" as appropriate.
 
-* we keep default option for Finger gesture recognition training.
+*  we keep default option for Finger gesture recognition training.
 
-*	75%:25% data is fragmented for training and testing data respectively.
+* 75%:25% data is fragmented for training and testing data respectively.
 
-*	Altogether we collected more than 150K handgesture dataset.
+* Altogether we collected more than 150K handgesture dataset.
 
-*	They have been categories under seveb class such as open,close,left click,right click,Pointer,scroll up and scroll down. 
+* They have been categories under seveb class such as open,close,left click,right click,Pointer,scroll up and scroll down. 
 
 
  ![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/92f6fe34-7018-4798-82a3-dc87b720fe85)
