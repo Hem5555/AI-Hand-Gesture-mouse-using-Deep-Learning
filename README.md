@@ -158,6 +158,8 @@ From our below confusion matrix, we accomplish 90% accuracy.We gain 0.98  precis
 ![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/58c47b69-59cb-42da-b28b-37d227d69b44)
 
 ![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/65aedb47-846a-4aa3-a0ee-c65a2f1f0320)
+
+
 Fig 9: Confusion Matrix :Precision,recall  and f1-score
 
 
