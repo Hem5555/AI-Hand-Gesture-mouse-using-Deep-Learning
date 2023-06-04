@@ -160,6 +160,9 @@ From our below confusion matrix, we accomplish 90% accuracy.We gain 0.98  precis
 Fig 9: Confusion Matrix :Precision,recall  and f1-score
 
 
+Dataset: https://www.kaggle.com/datasets/hem2023/hand-gesture-dataset
+
+
 
 
 
