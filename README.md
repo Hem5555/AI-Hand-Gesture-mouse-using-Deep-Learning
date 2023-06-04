@@ -4,6 +4,7 @@
 In this project we want to make AI virtual mouse.So that users will have same user experience while using physical mouse in laptop or desktop.
 
 ## Machine Learning Pipeline
+
 ![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/f428e4dc-f7c0-48b0-aa7f-5920787ce7a0)
 
 Fig: our Machine Learning Pipeline for  virtual mouse
@@ -54,8 +55,7 @@ These are the following steps we follow to collect and label data.
 
 * They have been categories under seveb class such as open,close,left click,right click,Pointer,scroll up and scroll down. 
 
-
- ![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/92f6fe34-7018-4798-82a3-dc87b720fe85)
+![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/92f6fe34-7018-4798-82a3-dc87b720fe85)
 
 Fig 1: Hand Gesture Classification with class ID
 
