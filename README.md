@@ -5,7 +5,10 @@ In this project we want to make AI virtual mouse.So that users will have same us
 
 ## Machine Learning Pipeline
 
-![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/f428e4dc-f7c0-48b0-aa7f-5920787ce7a0)
+![ML pipeline](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/95fa31d1-3f9a-49b2-aaab-acd50bc26e68)
+
+
+
 
 Fig: our Machine Learning Pipeline for  virtual mouse
         
@@ -55,7 +58,8 @@ These are the following steps we follow to collect and label data.
 
 * They have been categories under seveb class such as open,close,left click,right click,Pointer,scroll up and scroll down. 
 
-![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/92f6fe34-7018-4798-82a3-dc87b720fe85)
+![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/0cc30c75-d16d-4198-87f0-d80bddc8d498)
+
 
 Fig 1: Hand Gesture Classification with class ID
 
@@ -73,9 +77,10 @@ Fig 1: Hand Gesture Classification with class ID
 ### Gestures
 Once we train our model, we are able to get following class under trained hand gestures.
 
-![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/44c4d304-025c-4687-b50f-d5fe94f81ca3)
+![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/388edf10-bb6b-489b-bdad-dac36b8bdf3e)
 
-![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/e207f72b-ea03-4986-820f-e1a179711b97)
+![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/44b0d622-1b11-4c1c-a613-e953e0f4c192)
+
 
 
 ### Algorithms used for Hand Tracking
@@ -90,7 +95,8 @@ When the accurately cropped palm image are feeded to  hand landmark model, it dr
 
 
 
-![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/53889b09-eac2-4d35-b92e-a8612b361a30)
+![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/2da0acc1-17cf-467b-b877-9afe00aa70eb)
+
 
                     
 Fig 3: Hand perception pipeline overview
@@ -104,8 +110,8 @@ To detect initial hand locations,a singleshot detector model is employed for opt
 * First, palm detector is trained instead of a hand detector, since estimating bounding boxes of rigid objects like palms and fists is comparatively easier than detecting hands with articulated fingers. In addition, as palms are smaller objects, the non-maximum suppression algorithm performs well even for the two-hand self-occlusion cases such as handshakes. Further, palms can be modelled using only square bounding boxes, ignoring other aspect ratios, and therefore reducing the number of anchors by a factor of 3∼5.
 * Second, we use an encoder-decoder feature extractor similar to FPN for a larger scene-context awareness even for small objects.
 * Finally, we minimize the focal loss during training to support a large number of anchors resulting from the high scale variance.
+![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/7d49be3f-b658-46ca-ac9d-d594ca16c2b4)
 
-![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/ad26ba6a-4702-469a-9529-bf0d717a3b8f)
 
 Figure 4: Palm detector model architecture
 
@@ -117,20 +123,22 @@ HandLand Mark Model
 * A binary classification of handedness, e.g. left or right hand.
 
 
-![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/14ebbdac-3b72-4e3f-ab62-6116e8869ab7)
+![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/4a382858-7976-42b6-8339-af0390dfcecf)
+
 Figure5 : Architecture of our hand landmark model. The model has three outputs sharing a feature extractor. Each head is trained by correspondent datasets marked in the same color.
 
 ### Implementation of Mediapipeline
 Using MediaPipe, our hand tracking pipeline can be built as a directed graph of modular components, called Calculators. Mediapipe comes with an extensible set of Calculators to solve tasks like model inference, media processing, and data transformations across a wide variety of devices and platforms. Individual Calculators like cropping, rendering and neural network computations are further optimized to utilize GPU acceleration.
 Our MediaPipe graph for hand tracking is shown below. The graph consists of two subgraphs—one for hand detection and one for hand keypoints (i.e., landmark) computation. One key optimization MediaPipe provides is that the palm detector is only run as necessary (fairly infrequently), saving significant computation time. We achieve this by inferring the hand location in the subsequent video frames from the computed hand key points in the current frame, eliminating the need to run the palm detector over each frame.
+![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/23c95544-c5ed-4d8f-b82d-4e44eb482953)
 
-![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/d847536e-fac9-4c1c-9d03-dc5bd2e35c2e)
                             
 Fig6: The hand landmark model’s output (REJECT_HAND_FLAG) controls when the hand detection model is triggered. This behavior is achieved by MediaPipe’s powerful synchronization building blocks, resulting in high performance and optimal throughput of the ML pipeline.
 
 
 ### MediaPipeline Hand marks
-![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/42154fb1-488d-46cb-ab8a-3bf55f70bdaf)
+![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/ee8b79d0-4fa0-441d-b4a5-4eef82c46321)
+
 Fig 7: Hand landmark given by MediaPipe
 
 ### Demonstration
@@ -143,7 +151,8 @@ Once we execute the system and it starts capturing  video of webcam.It captures 
 * Lastly, we can terminate  webcam by pressing esc button on our keyboard.
 
 
-![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/c7f8fe64-ad0b-43f8-8c3d-45d1a29bf5da)
+![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/9085b284-62ef-45f2-94c3-e442bf3b77e5)
+
 
 Fig 8: Flowchart of the real-time AI virtual mouse system.
 
@@ -152,9 +161,10 @@ Fig 8: Flowchart of the real-time AI virtual mouse system.
 
 From our below confusion matrix, we accomplish 90% accuracy.We gain 0.98  precision,  0.72 recall and   0.83 f1 score for open hand gesture.Similarly, we obtain  0.85  precision,  0.87 recall and 0.86 f1 score for close hand gesture.In case of pointer, we get 0.85,0.95, 0.89 as precsion,recall and f1 score.Further, we score 0.99,0.96, 0.97 as precsion,recall and f1 score for left click hand gesture.In addition,  we receive 0.97 precision, 0.99 recall  and 0.98 f1 score for right click.For  scroll down,we achieve  0.99 precision, 0.92 recall and  0.95 f1 score.Lastly, we inherit  0.91 precision,  0.90 recall and  0.91 f1-score.
 
-![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/58c47b69-59cb-42da-b28b-37d227d69b44)
+![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/80b9c2b7-5389-496e-b6ca-3a4827cbb603)
 
-![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/65aedb47-846a-4aa3-a0ee-c65a2f1f0320)
+![image](https://github.com/Hem5555/AI-Hand-Gesture-mouse-using-Deep-Learning/assets/121716939/1d260a38-d69c-496c-9210-432eaec4c536)
+
 
 
 Fig 9: Confusion Matrix :Precision,recall  and f1-score
